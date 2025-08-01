@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mini Grocery Store</title>
+    <!-- Link to external CSS file -->
+    <link rel="stylesheet" href="Grocery2.css">
+</head>
+<body>
+    <div id="loginPage" class="login-container">
+        <h2>Login</h2>
+        <form id="loginForm">
+            <label for="username">Username:</label>
+            <input type="text" id="username" placeholder="Enter username" required><br>
+
+            <label for="password">Password:</label>
+            <input type="password" id="password" placeholder="Enter password" required><br>
+
+            <button type="button" onclick="login()">Login</button>
+            <p id="errorMsg" class="error-msg"></p>
+        </form>
+    </div>
+
+    <div id="storePage" class="store-container hidden">
+        <h2>Welcome to the Mini Grocery Store</h2>
+        
+        <!-- Grocery Items Section -->
+        <div class="grocery-section">
+            <h3>Available Products</h3>
+            <ul id="groceryItems" class="grocery-items">
+                <li data-name="Apples" data-price="2.50">Apples - $2.50 <button onclick="addToCart('Apples', 2.50)">Add to Cart</button></li>
+                <li data-name="Bread" data-price="1.50">Bread - $1.50 <button onclick="addToCart('Bread', 1.50)">Add to Cart</button></li>
+                <li data-name="Milk" data-price="3.00">Milk - $3.00 <button onclick="addToCart('Milk', 3.00)">Add to Cart</button></li>
+                <li data-name="Eggs" data-price="2.00">Eggs - $2.00 <button onclick="addToCart('Eggs', 2.00)">Add to Cart</button></li>
+                <li data-name="Carrots" data-price="1.75">Carrots - $1.75 <button onclick="addToCart('Carrots', 1.75)">Add to Cart</button></li>
+            </ul>
+        </div>
+
+        <!-- Cart Section -->
+        <div class="cart-section">
+            <h3>Your Cart</h3>
+            <ul id="cartItems" class="cart-items"></ul>
+            <p id="totalAmount">Total: $0.00</p>
+            <button onclick="clearCart()">Clear Cart</button>
+        </div>
+
+        <button onclick="logout()">Logout</button>
+    </div>
+
+    <script src="Grocery3.js"></script>
+</body>
+</html>
